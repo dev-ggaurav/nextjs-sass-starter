@@ -1,4 +1,4 @@
-$primary-color:#6A3EE5;
+@use '../abstracts' as *;
 
 .container {
   padding: 0 0.5rem;
@@ -22,6 +22,10 @@ $primary-color:#6A3EE5;
   & a {
     color: $primary-color;
     text-decoration: none;
+
+    @include mq(md){
+      color: red;
+    }
   }
 
   & a:hover {
@@ -29,6 +33,10 @@ $primary-color:#6A3EE5;
   }
 
 }
+
+.test { 
+  @include pixelsToFluidText(24px, 38px, 60px)
+ }
 
 .title {
   margin: 0;

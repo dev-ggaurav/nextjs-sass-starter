@@ -1,0 +1,21 @@
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+@function calculateClamp(
+  $minimum,
+  $preferred,
+  $maximum,
+  $preferred_viewport_width: 1000px
+) {
+  $clamp_parameter_1: calculateRem($minimum);
+  $clamp_parameter_2: strip-units((($preferred + 0) / $preferred_viewport_width) * 100) * 1vw;
+  $clamp_parameter_3: calculateRem($maximum);
+
+  @return clamp(#{$clamp_parameter_1}, #{$clamp_parameter_2}, #{$clamp_parameter_3});
+}

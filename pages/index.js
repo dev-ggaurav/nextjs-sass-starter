@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/components/Home.module.scss'
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
         <h1 className={styles.title}>
           My <a href="https://nextjs.org">Next.js!</a> and SASS starter.
         </h1>
+        <h2 className="test">This is for test!</h2>
       </main>
     </div>
   )

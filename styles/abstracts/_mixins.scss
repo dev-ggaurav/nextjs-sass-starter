@@ -1,0 +1,18 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+@mixin mq($key) {
+
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin pixelsToFluidText($minimum, $preferred, $maximum, $preferred_viewport_width: 1000px) {
+  /* Fallback for IE11 */
+  font-size: calculateRem($preferred);
+  /* Modern browsers */
+  font-size: calculateClamp($minimum, $preferred, $maximum, $preferred_viewport_width);
+}
