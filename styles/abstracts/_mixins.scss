@@ -10,9 +10,18 @@
   }
 }
 
+
 @mixin pixelsToFluidText($minimum, $preferred, $maximum, $preferred_viewport_width: 1000px) {
   /* Fallback for IE11 */
   font-size: calculateRem($preferred);
   /* Modern browsers */
   font-size: calculateClamp($minimum, $preferred, $maximum, $preferred_viewport_width);
 }
+
+
+@mixin flex-row-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
